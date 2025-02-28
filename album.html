@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Mindful Escape</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon_io/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Core theme CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
+    <a class="back" href="index.html">
+      <img src="imgs/arrowWhite.svg" alt="Go Back" />
+    </a>
+
+    <a id="headImgWho" href="#">
+      <img src="imgs/cover.png" alt="Cover & Tracklist" />
+    </a>
+
+    <!-- <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="imgs/pp.jpg" target="_blank">
+            <img src="imgs/pp.jpg" alt="Profile Picture" />
+          </a>
+        </div>
+        <div class="popup-quote">
+          But... how long lasts your happiness, after you got what you wanted?
+        </div>
+ab        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div> -->
+
+    <div id="userName" class="userNameMovie">Mindful Escape</div>
+    <a id="userNameline2" class="outNow" href="www.google.com" target="_blank"
+      >Music Album produced by Cetaceous</a
+    >
+    <div id="userNameline3">
+      Featuring: Elliot Platt, Ashesndreams, Jefke, Chewba, Yoda, Sgaja, ODARKA
+    </div>
+
+    <div class="musicPlattforms">
+      <a
+        href="https://open.spotify.com/intl-de/track/5c1AicjR22mXtClspBQ0Mb?si=d961856a46c14b2e"
+        target="_blank"
+      >
+        <img class="spotify" src="imgs/spotify.svg" />
+      </a>
+      <a
+        href="https://music.apple.com/ch/album/find-feat-elliot-platt-ashesndreams/1760790128?i=1760790129"
+        target="_blank"
+      >
+        <img class="spotify" src="imgs/apple-music.svg" />
+      </a>
+      <a
+        href="https://music.youtube.com/watch?v=fh37FCslgZ0&si=F56_aYj_JF_3AAPj"
+        target="_blank"
+      >
+        <img class="spotify" src="imgs/Youtube-music.svg" />
+      </a>
+    </div>
+
+    <div id="links">
+      <div class="abstract">
+        <div class="abstractTitle">Abstract</div>
+        <p id="text" class="abstractDescription">
+          This self-produced album explores the themes of daily stress,
+          pressure, and fear, contrasted with the mental spaces we escape to for
+          relief. These imagined places provide a sense of freedom and balance
+          in our minds. The album features 9 tracks, plus a bonus song, "Lagoon
+          (featuring Galaxy Mix)." A total of 7 diverse artists combine their
+          voices, blending singing, rapping, and spoken word to reflect on the
+          delicate interplay between life's demands and mental liberation. This
+          project is a creative journey into the search for balance in a
+          fast-paced world.
+        </p>
+      </div>
+      <div class="abstract">
+        <div class="abstractTitle">Behind The Scenes Visuals</div>
+        <div class="btsVisuals">
+          <img class="btsImg" src="imgs/tim1.png" alt="Bild 1" />
+          <img class="btsImg" src="imgs/elliot.png" alt="Bild 2" />
+          <img class="btsImg" src="imgs/silvan.png" alt="Bild 3" />
+          <img class="btsImg" src="imgs/tim2.png" alt="Bild 4" />
+          <img class="btsImg" src="imgs/eshas.png" alt="Bild 5" />
+          <img class="btsImg" src="imgs/meInBkk1.png" alt="Bild 6" />
+          <img class="btsImg" src="imgs/tallin.png" alt="Bild 7" />
+          <img class="btsImg" src="imgs/meInBkk2.png" alt="Bild 8" />
+        </div>
+      </div>
+    </div>
+
+    <div id="hashtag">© CETACEOUS 2025</div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("audio");
+      const radioButtons = document.querySelectorAll(".radio");
+
+      radioButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
+      });
+
+      audio.addEventListener("timeupdate", function () {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + "%";
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const p = document.getElementById("text");
+      const words = p.textContent.split(" "); // Teile den Text in Wörter auf
+
+      const formattedText = words
+        .map((word) => {
+          if (word.length > 0) {
+            return `<span class="bold">${
+              word[0]
+            }</span><span class="light">${word.slice(1)}</span>`;
+          }
+          return word;
+        })
+        .join(" ");
+
+      p.innerHTML = formattedText; // Setze den neuen HTML-Code
+    });
+  </script>
+</html>

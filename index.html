@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Eli</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon_io/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Core theme CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
+
+    <a id="profilePicture" href="#popup">
+      <img src="imgs/pp.jpg" alt="Profile Picture" />
+    </a>
+
+    <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="imgs/pp.jpg" target="_blank">
+            <img src="imgs/pp.jpg" alt="Profile Picture" />
+          </a>
+        </div>
+        <div class="popup-quote">
+          But... how long lasts your happiness, after you got what you wanted?
+        </div>
+        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div>
+
+    <div id="userName">Fresh Eli</div>
+    <div id="userNameline2">alias Cetaceous</div>
+    <div id="userNameline3">
+      Visual Storyteller, Music Architect, Filmmaker, Artist
+    </div>
+
+    <div id="links">
+      <a class="link" href="movie.html">
+        <!-- <i class="fab fa-github">&nbsp;</i> -->
+        <p class="link-title">
+          <i class="fa-solid fa-film"></i> Everybody is Looking for Something
+        </p>
+        <div id="link-description">
+          Visual Album Short Movie directed by Elias Baumann
+        </div>
+      </a>
+      <a class="link" href="album.html">
+        <p id="link-title">
+          <i class="fa-brands fa-spotify"></i>
+          <i class="fa-brands fa-apple"></i> Mindful Escape
+        </p>
+        <div id="link-description">
+          Music Album with 7 different artists prod. by Cetaceous
+        </div>
+      </a>
+      <a class="link" href="who.html">
+        <p id="link-title">
+          <i class="fa-solid fa-fingerprint"></i> Who is Cetaceous?
+        </p>
+        <div id="link-description">
+          Get to know Fresh Eli and find out more about this charakter
+        </div>
+      </a>
+      <a class="link" href="archive.html">
+        <p id="link-title">
+          <i class="fa-solid fa-box-archive"></i> Video & Image Archive
+        </p>
+        <div id="link-description">Experience all my previous projects</div>
+      </a>
+      <a class="radio" id="progress-container">
+        <audio id="audio" src="sound/01 FIND.wav"></audio>
+
+        <div id="progress-bar"><i class="fas fa-play"></i> Click for Radio</div>
+      </a>
+
+      <div class="social">
+        <a class="social-link" href="#" target="_blank">
+          <i class="fab fa-instagram">&nbsp;</i>Instagram
+        </a>
+        <a class="social-link" href="#" target="_blank">
+          <i class="fab fa-youtube"></i> YouTube
+        </a>
+      </div>
+    </div>
+
+    <div id="hashtag">© CETACEOUS 2025</div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("audio");
+      const radioButtons = document.querySelectorAll(".radio");
+
+      radioButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
+      });
+
+      audio.addEventListener("timeupdate", function () {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + "%";
+      });
+    });
+  </script>
+</html>

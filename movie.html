@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Movie</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon_io/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Core theme CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
+    <a class="back" href="index.html">
+      <img src="imgs/arrowWhite.svg" alt="Go Back" />
+    </a>
+
+    <a id="headImg" href="#">
+      <img src="imgs/movie.png" alt="Movie Poster" />
+    </a>
+
+    <!-- <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="imgs/pp.jpg" target="_blank">
+            <img src="imgs/pp.jpg" alt="Profile Picture" />
+          </a>
+        </div>
+        <div class="popup-quote">
+          But... how long lasts your happiness, after you got what you wanted?
+        </div>
+ab        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div> -->
+
+    <div id="userName" class="userNameMovie">
+      Everybody is Looking for Something
+    </div>
+    <a id="userNameline2" class="outNow" href="www.google.com" target="_blank"
+      >Out Now!</a
+    >
+    <div id="userNameline3">directed by Elias Baumann alias Cetaceous</div>
+
+    <div id="links">
+      <div class="abstract">
+        <div class="abstractTitle">Abstract</div>
+        <p id="text" class="abstractDescription">
+          The Mental Escape is an introspective audiovisual documentary about
+          finding balance in today’s fast-paced world. It explores the stress of
+          work, big-city life, and daily routines, contrasted with the human
+          yearning for mental liberation. Through evocative visuals and a
+          self-produced music album, the film uses rap, spoken word, and
+          melodies to reflect on the constant search for happiness and how
+          quickly it can fade. Mental Escape invites viewers to think about the
+          balance between the preasure of daily life and the chase for inner
+          peace.
+        </p>
+      </div>
+      <div class="abstract">
+        <div class="abstractTitle">Behind The Scenes Visuals</div>
+        <div class="btsVisuals">
+          <img class="btsImg" src="imgs/bkk1.png" alt="Bild 1" />
+          <img class="btsImg" src="imgs/bkk2.png" alt="Bild 2" />
+          <img class="btsImg" src="imgs/bkk3.png" alt="Bild 3" />
+          <img class="btsImg" src="imgs/bkk4.png" alt="Bild 4" />
+          <img class="btsImg" src="imgs/bkk5.png" alt="Bild 5" />
+        </div>
+      </div>
+    </div>
+
+    <div id="hashtag">© CETACEOUS 2025</div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("audio");
+      const radioButtons = document.querySelectorAll(".radio");
+
+      radioButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
+      });
+
+      audio.addEventListener("timeupdate", function () {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + "%";
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const p = document.getElementById("text");
+      const words = p.textContent.split(" "); // Teile den Text in Wörter auf
+
+      const formattedText = words
+        .map((word) => {
+          if (word.length > 0) {
+            return `<span class="bold">${
+              word[0]
+            }</span><span class="light">${word.slice(1)}</span>`;
+          }
+          return word;
+        })
+        .join(" ");
+
+      p.innerHTML = formattedText; // Setze den neuen HTML-Code
+    });
+  </script>
+</html>
