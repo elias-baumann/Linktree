@@ -98,6 +98,8 @@ body {
 .back img {
   max-width: 30px;
   height: auto;
+  filter: brightness(0) saturate(100%) invert(88%) sepia(23%) saturate(227%)
+    hue-rotate(55deg) brightness(105%) contrast(105%);
 }
 
 #profilePicture,
@@ -193,7 +195,7 @@ body {
 #userNameline3 {
   color: var(--accentColorHead);
   font-family: var(--font-light);
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   font-weight: 100;
   line-height: 1.25;
   display: block;
@@ -207,7 +209,15 @@ body {
   #userName,
   #userNameline2,
   #userNameline3 {
-    color: var(--accentColor); /* Text wird schwarz */
+    color: var(--accentColor);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #userName,
+  #userNameline2,
+  #userNameline3 {
+    font-size: 0.9rem;
   }
 }
 
@@ -1095,7 +1105,7 @@ i {
 .abstractTitle {
   font-family: var(--font-bld);
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
   /* color: var(--accentColorDark); */
   color: #f51d5e;
   margin-bottom: 20px;
@@ -1118,7 +1128,7 @@ i {
 @media screen and (max-width: 1300px) {
   .abstractTitle,
   #text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -1146,7 +1156,7 @@ i {
   }
 }
 
-.btsVisuals img:hover {
+.archive:hover {
   filter: opacity(60%); /* Abdunkeln */
 }
 
@@ -1178,12 +1188,23 @@ i {
 .spotify {
   width: 50px; /* Größe der Icons anpassen */
   height: auto;
-  /* filter: invert(64%) sepia(65%) saturate(432%) hue-rotate(220deg); */
+  filter: brightness(0) saturate(100%) invert(10%) sepia(59%) saturate(4301%)
+    hue-rotate(251deg) brightness(94%) contrast(101%);
+}
+
+.spotify:hover {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(4773%)
+    hue-rotate(330deg) brightness(97%) contrast(96%);
 }
 
 .insta {
   width: 50px;
   height: auto;
+}
+
+.insta:hover {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(4773%)
+    hue-rotate(330deg) brightness(97%) contrast(96%);
 }
 
 @media screen and (max-width: 1300px) {
