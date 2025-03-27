@@ -236,12 +236,12 @@ body {
   margin: 27px auto;
 }
 
-/* #link-titleP {
-  color: red;
-} */
+#link-title p {
+  color: var(--accentColorFeet);
+}
 
 p {
-  color: var(--accentColorDark);
+  color: var(--accentRed);
   font-size: 1.1rem;
   margin: 0;
   padding: 5px 0 5px 0;
@@ -1103,11 +1103,10 @@ i {
 }
 
 .abstractTitle {
-  font-family: var(--font-bld);
+  font-family: var(--accentColor);
   text-align: center;
   font-size: 1.3rem;
   /* color: var(--accentColorDark); */
-  color: #f51d5e;
   margin-bottom: 20px;
   margin-top: 20px;
 }
