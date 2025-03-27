@@ -68,7 +68,7 @@ body {
   min-height: 100vh;
   font-family: var(--font);
 
-  background-image: url(imgs/bg.png); /* Pfad zum Bild */
+  background-image: url(imgs/bg.jpg); /* Pfad zum Bild */
   background-size: cover; /* Skaliert das Bild, damit es die gesamte Breite füllt */
   background-position: top center; /* Positioniert das Bild mittig */
   background-repeat: no-repeat; /* Verhindert Wiederholungen */
